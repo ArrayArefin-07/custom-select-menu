@@ -11,7 +11,7 @@
 
     <div class="selector">
       <div id="selectField">
-        <p>Select Social Media</p>
+        <p id="seletText">Select Social Media</p>
         <img src="images/arrow.png">
       </div>
 
@@ -45,5 +45,21 @@
     </div>
 
   </div>
+
+  <script>
+
+  var selectField = document.getElementById("selectField");
+  var selectText = document.getElementById("seletText");
+  var options = document.getElementsByClassName("options");
+
+  for(option of options){
+    option.onclick = function(){
+      selectText.innerHTML = this.textContent;
+    }
+  }
+
+
+  </script>
+
 </body>
 </html>
