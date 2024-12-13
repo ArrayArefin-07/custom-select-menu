@@ -12,7 +12,7 @@
     <div class="selector">
       <div id="selectField">
         <p id="seletText">Select Social Media</p>
-        <img src="images/arrow.png">
+        <img src="images/arrow.png" id="arrowIcon">
       </div>
 
       <ul id="list" class="hide">
@@ -52,14 +52,18 @@
   var selectText = document.getElementById("seletText");
   var options = document.getElementsByClassName("options");
   var list = document.getElementById("list");
+  var arrowIcon = document.getElementById("arrowIcon");
 
   selectField.onclick = function(){
     list.classList.toggle("hide");
+    arrowIcon.classList.toggle("rotate");
   }
 
   for(option of options){
     option.onclick = function(){
       selectText.innerHTML = this.textContent;
+      list.classList.toggle("hide");
+      arrowIcon.classList.toggle("rotate");
     }
   }
 
